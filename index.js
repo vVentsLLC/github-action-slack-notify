@@ -59,13 +59,18 @@ function buildSlackAttachments({ status, color }) {
 }
 
 async function run () {
-  console.log(github)
   const channel = core.getInput('channel')
   const text = core.getInput('text')
   const status = core.getInput('status')
   const color = core.getInput('color')
   const messageId = core.getInput('messageId')
-  const token = process.env.SLACK_BOT_TOKEN
+  const token = core.getInput('token')
+
+  if (!token) {
+    core.setFailed(`You must a slack bot token.`)
+    return
+  }
+
   const slack = new SlackClient(token)
 
   if (!channel && !core.getInput('channelId')) {
