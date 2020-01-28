@@ -1,0 +1,14 @@
+{
+  "name": "slack-notify",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Notifies on slack",
+  "main": "index.js",
+  "author": "Aravindan Ve <aravindan.ve@outlook.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@actions/core": "^1.2.2",
+    "@actions/github": "^2.1.0",
+    "@slack/web-api": "^5.7.0"
+  }
+}

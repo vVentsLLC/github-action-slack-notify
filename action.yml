@@ -1,0 +1,29 @@
+name: 'Slack notify'
+author: 'Aravindan Ve <aravindan.ve@outlook.com>'
+description: 'Notifies on slack'
+inputs:
+  channel:
+    description: 'The Slack channel name. Required if no `channelId` provided.'
+    required: false
+  channelId:
+    description: 'The Slack channel ID. Required if no `channel` provided.'
+    required: false
+  text:
+    description: 'The text to include in the message.'
+    required: false
+  status:
+    description: 'The status to list in the update.'
+    required: true
+  color:
+    description: 'The color of the Slack attachment.'
+    required: true
+    default: '#cccccc'
+  messageId:
+    description: 'The ID of the existing Slack message to update.'
+    required: false
+outputs:
+  messageId:
+    description: 'The unique timestamp identifier of the Slack message sent'
+runs:
+  using: 'node12'
+  main: 'index.js'
